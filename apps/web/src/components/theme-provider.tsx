@@ -1,3 +1,4 @@
+import { useDimensionSender } from "@/lib/dimensionSender";
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light" | "system";
@@ -55,7 +56,6 @@ export function ThemeProvider({
       setTheme(theme);
     },
   };
-
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
       {children}

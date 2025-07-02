@@ -11,7 +11,8 @@ import "./index.css";
 import Header from "./components/header";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "./components/ui/sonner";
-
+import { useDimensionSender } from "./lib/dimensionSender";
+import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -35,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
+        {/* <Meta /> */}
         <Links />
       </head>
       <body>
@@ -48,6 +49,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  useDimensionSender();
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="grid grid-rows-[auto_1fr] h-svh">
