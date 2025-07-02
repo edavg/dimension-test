@@ -11,7 +11,7 @@ import "./index.css";
 import Header from "./components/header";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "./components/ui/sonner";
-import { useDimensionSender } from "./lib/dimensionSender";
+import DimensionSender, { useDimensionSender } from "./lib/dimensionSender";
 import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
@@ -50,6 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   useDimensionSender();
+  DimensionSender();
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
